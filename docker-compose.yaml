@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  django_web:
+    build: .
+    volumes:
+      - ./:/code
+    environment:
+      - DJANGO_SETTINGS=dev
+  django_migrate:
+    extends:
+      service: django_web
+    command: python manage.py migrate
+  django_run:
+    extends:
+      service: django_web
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - '8000:8000'
