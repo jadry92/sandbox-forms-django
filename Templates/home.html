@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+{% block head_content %}
+  <title>Sandbox Forms</title>
+{% endblock %}
+
+
+{% block container %}
+  <h1>Home</h1>
+  <ul>
+    <li>
+      <a href="{% url 'basic_home' %}">Basic</a>
+    </li>
+  </ul>
+{% endblock %}
